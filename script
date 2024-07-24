@@ -1,0 +1,15 @@
+// script.js
+document.getElementById('email-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var emailInput = document.getElementById('email-input');
+    var errorMessage = document.getElementById('error-message');
+
+    var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (emailPattern.test(emailInput.value)) {
+        errorMessage.style.display = 'none';
+        alert('Thank you for subscribing!');
+        emailInput.value = '';
+    } else {
+        errorMessage.style.display = 'block';
+    }
+});
